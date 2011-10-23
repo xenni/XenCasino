@@ -1,0 +1,37 @@
+name: XenCasino
+version: 1.0.1-alpha
+author: Xenni (xennitalonflame@gmail.com)
+
+main: me.xenni.plugins.casino.XenCasinoPlugin
+
+depend: [EcoSystem, XenCraftCore]
+
+permissions:
+    xencasino.slot.test:
+        desciption: |
+            Allows you to initiate slot behavior tests.
+            These tests are resource intensive, so only allow trusted people to execute this function.
+        default: op
+    xencasino.slot.create:
+        description: Allows you to create a slot machine.
+        default: op
+    xencasino.slot.use:
+        description: Allows you to use a slot machine.
+        default: true
+    
+commands:
+    setslotbet:
+        description: Sets the amount to load into slot machines for each pull.
+        permission: xencraft.eco.slot.use
+        usage: "usage: /<command> <Amount> (<CurrencySystem>)"
+        alias: ["casinosetslotbet", "xencasinosetslotbet"]
+    slotbet:
+        description: Displays your current slot bet.
+        permission: xencraft.eco.slot.use
+        usage: "usage: /<command>"
+        alias: ["casinoslotbet", "xencasinoslotbet"]
+    slottest:
+        description: Simulates a full test run of a slot machine.
+        permission: xencasino.slot.test
+        usage: "usage: /<command>"
+        alias: ["casinoslottest", "xencasinoslottest"]
